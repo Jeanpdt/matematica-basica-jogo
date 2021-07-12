@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IsAbove : MonoBehaviour
-{    public bool isInBox;
+public class BoxObjectCounter : MonoBehaviour
+{    
+    public int qtdObjectsInBox;
 
     // Start is called before the first frame update
     void Start()
@@ -11,19 +12,17 @@ public class IsAbove : MonoBehaviour
         
     }
     // Update is called once per frame
-   void Update(){
-    if(isInBox){
-    } else {
+    void Update() {
     }
-}
-    void OnTriggerStay(Collider other) {
-        if(other.CompareTag("Player")) {
-            isInBox = true;
+    void OnTriggerEnter(Collider other) {
+        if(other.CompareTag("Object")) {
+            qtdObjectsInBox += 1;
+            Debug.Log(qtdObjectsInBox);
         }
     }
     void OnTriggerExit(Collider other) {
-        if(other.CompareTag("Player")) {
-            isInBox = false;
+        if(other.CompareTag("Object")) {
+             qtdObjectsInBox -= 1;
         }
     }
 }
