@@ -9,16 +9,13 @@ public class DragAndDrop : MonoBehaviour
 	public Vector3 offset;
 	public float screenSpaceZ;
 
-	// Use this for initialization
 	void Start ()
 	{
 	
 	}
 	
-	// Update is called once per frame
 	void Update ()
 	{
-		// Debug.Log(_mouseState);
 		if (Input.GetMouseButtonDown (0)) {
 			RaycastHit hitInfo;
 
@@ -33,13 +30,6 @@ public class DragAndDrop : MonoBehaviour
 		}
 		if (_mouseState) {
 			//keep track of the mouse position
-
-			// screenSpaceZ  = screenSpace.z;
-
-			// if (screenSpaceZ < 5 || screenSpaceZ > 15) {
-			// 	screenSpaceZ = 10;
-			// }
-			
 			var curScreenSpace = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 20);
 
 			//convert the screen mouse position to world point and adjust with offset

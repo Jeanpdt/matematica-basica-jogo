@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IsInBox : MonoBehaviour
+public class BoxObjectCounter : MonoBehaviour
 {    
     public bool isInBox;
 
@@ -19,6 +19,7 @@ public class IsInBox : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Object")) {
             qtdObjectsInBox += 1;
+            Debug.Log(qtdObjectsInBox);
         }
     }
     void OnTriggerExit(Collider other) {
