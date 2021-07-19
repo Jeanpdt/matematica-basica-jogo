@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BoxObjectCounter : MonoBehaviour
 {    
-    public bool isInBox;
-
     public int qtdObjectsInBox;
 
     // Start is called before the first frame update
@@ -19,7 +17,6 @@ public class BoxObjectCounter : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Object")) {
             qtdObjectsInBox += 1;
-            Debug.Log(qtdObjectsInBox);
         }
     }
     void OnTriggerExit(Collider other) {

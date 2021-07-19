@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class BotaoComportamento : MonoBehaviour
 {
-    public GameObject recipiente;
+    public GameObject gameManager;
 
     void Start()
     {
-        recipiente = GameObject.Find("Counter");
+        gameManager = GameObject.Find("GameManager");
     }
 
     public void OnButtonPress()
     {
-        BoxObjectCounter boxObjectCounter = recipiente.GetComponent<BoxObjectCounter>();
+        GameManager gameManagerScript = gameManager.GetComponent<GameManager>();
 
-        Debug.Log(boxObjectCounter.qtdObjectsInBox);
+        Debug.Log(gameManagerScript.respostaEtapa1Fase1);
     }
 }
