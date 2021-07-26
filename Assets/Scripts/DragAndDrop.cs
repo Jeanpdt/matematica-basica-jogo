@@ -30,7 +30,7 @@ public class DragAndDrop : MonoBehaviour
 		}
 		if (_mouseState) {
 			//keep track of the mouse position
-			var curScreenSpace = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 20);
+			var curScreenSpace = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 32);
 
 			//convert the screen mouse position to world point and adjust with offset
 			var curPosition = Camera.main.ScreenToWorldPoint (curScreenSpace) + offset;
